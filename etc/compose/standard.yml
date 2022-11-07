@@ -533,7 +533,7 @@ services:
     mem_limit: 4g
     ports:
      - "127.0.0.1:64298:9200"
-    image: "dtagdevsec/elasticsearch:2204"
+    image: "elasticsearch/elasticsearch:6.0.0"
     volumes:
      - /data:/data
 
@@ -547,8 +547,7 @@ services:
     mem_limit: 1g
     ports:
      - "127.0.0.1:64296:5601"
-    image: "dtagdevsec/kibana:2204"
-
+    image: "kibana/kibana:6.0.0"
 ## Logstash service
   logstash:
     container_name: logstash
@@ -561,7 +560,7 @@ services:
     env_file:
      - /opt/tpot/etc/compose/elk_environment
     mem_limit: 2g
-    image: "dtagdevsec/logstash:2204"
+    image: "logstash/logstash:6.0.0"
     volumes:
      - /data:/data
 
